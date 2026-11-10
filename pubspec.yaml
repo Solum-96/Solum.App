@@ -1,0 +1,32 @@
+name: solum
+description: "Solum: the territory and follow-up app for solo field sellers."
+publish_to: "none"
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Brand typeface (Open Font License). Files live in brand/fonts/.
+  fonts:
+    - family: PlusJakartaSans
+      fonts:
+        - asset: brand/fonts/PlusJakartaSans-Regular.ttf
+          weight: 400
+        - asset: brand/fonts/PlusJakartaSans-Medium.ttf
+          weight: 500
+        - asset: brand/fonts/PlusJakartaSans-Bold.ttf
+          weight: 700
+        - asset: brand/fonts/PlusJakartaSans-ExtraBold.ttf
+          weight: 800

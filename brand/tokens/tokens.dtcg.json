@@ -1,0 +1,189 @@
+{
+  "color": {
+    "light": {
+      "surface": {
+        "$type": "color",
+        "$value": "#FAF8F3",
+        "$description": "Chalk. Page and app background."
+      },
+      "surface-raised": {
+        "$type": "color",
+        "$value": "#FFFFFF",
+        "$description": "Cards, bottom sheets, search bar, filter chips at rest."
+      },
+      "sandstone": {
+        "$type": "color",
+        "$value": "#E7DFD0",
+        "$description": "Map ground, dividers, progress-bar track, outlined-area fill under a 12% olive wash."
+      },
+      "ink": {
+        "$type": "color",
+        "$value": "#1F2421",
+        "$description": "Primary text and headings on surface and surface-raised; the ground bar in the mark on light grounds."
+      },
+      "ink-muted": {
+        "$type": "color",
+        "$value": "#50564F",
+        "$description": "Secondary text, labels, inactive tab icons. Passes 4.5:1 on surface in both themes."
+      },
+      "olive": {
+        "$type": "color",
+        "$value": "#4D5B2E",
+        "$description": "Brand color. Primary buttons, active filter chip, visited map pins, progress fill, links."
+      },
+      "on-olive": {
+        "$type": "color",
+        "$value": "#FFFFFF",
+        "$description": "Text and icons on olive."
+      },
+      "sol": {
+        "$type": "color",
+        "$value": "#E9B949",
+        "$description": "Accent. The dot in the mark, follow-up pins, the Follow up button. Use sparingly: it always means someone to see."
+      },
+      "on-sol": {
+        "$type": "color",
+        "$value": "#1F2421",
+        "$description": "Text and icons on sol. Never white on sol."
+      },
+      "sol-tint": {
+        "$type": "color",
+        "$value": "#FBF0D3",
+        "$description": "Follow-up badge background, with ink text."
+      },
+      "basalt": {
+        "$type": "color",
+        "$value": "#1F2421",
+        "$description": "Fixed dark brand ground: app icon, splash screen, greeting card on the map, merch. Same in both themes."
+      },
+      "on-basalt": {
+        "$type": "color",
+        "$value": "#FFFFFF",
+        "$description": "Text and the ground bar of the mark on basalt."
+      }
+    },
+    "dark": {
+      "surface": {
+        "$type": "color",
+        "$value": "#171A18",
+        "$description": "Chalk. Page and app background."
+      },
+      "surface-raised": {
+        "$type": "color",
+        "$value": "#222623",
+        "$description": "Cards, bottom sheets, search bar, filter chips at rest."
+      },
+      "sandstone": {
+        "$type": "color",
+        "$value": "#3A3E38",
+        "$description": "Map ground, dividers, progress-bar track, outlined-area fill under a 12% olive wash."
+      },
+      "ink": {
+        "$type": "color",
+        "$value": "#F3F0E8",
+        "$description": "Primary text and headings on surface and surface-raised; the ground bar in the mark on light grounds."
+      },
+      "ink-muted": {
+        "$type": "color",
+        "$value": "#B9BDB6",
+        "$description": "Secondary text, labels, inactive tab icons. Passes 4.5:1 on surface in both themes."
+      },
+      "olive": {
+        "$type": "color",
+        "$value": "#A3B57A",
+        "$description": "Brand color. Primary buttons, active filter chip, visited map pins, progress fill, links."
+      },
+      "on-olive": {
+        "$type": "color",
+        "$value": "#171A18",
+        "$description": "Text and icons on olive."
+      },
+      "sol": {
+        "$type": "color",
+        "$value": "#E9B949",
+        "$description": "Accent. The dot in the mark, follow-up pins, the Follow up button. Use sparingly: it always means someone to see."
+      },
+      "on-sol": {
+        "$type": "color",
+        "$value": "#1F2421",
+        "$description": "Text and icons on sol. Never white on sol."
+      },
+      "sol-tint": {
+        "$type": "color",
+        "$value": "#3D3420",
+        "$description": "Follow-up badge background, with ink text."
+      },
+      "basalt": {
+        "$type": "color",
+        "$value": "#1F2421",
+        "$description": "Fixed dark brand ground: app icon, splash screen, greeting card on the map, merch. Same in both themes."
+      },
+      "on-basalt": {
+        "$type": "color",
+        "$value": "#FFFFFF",
+        "$description": "Text and the ground bar of the mark on basalt."
+      }
+    }
+  },
+  "space": {
+    "space-1": {
+      "$type": "dimension",
+      "$value": "4px",
+      "$description": "Gap between a label and its value."
+    },
+    "space-2": {
+      "$type": "dimension",
+      "$value": "8px",
+      "$description": "Gap between chips and between stacked lines in a card."
+    },
+    "space-4": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$description": "Screen side margin, gap between sections in a sheet."
+    },
+    "space-5": {
+      "$type": "dimension",
+      "$value": "20px",
+      "$description": "Bottom-sheet and card padding."
+    },
+    "space-8": {
+      "$type": "dimension",
+      "$value": "32px",
+      "$description": "Gap between major blocks on marketing pages."
+    }
+  },
+  "radius": {
+    "radius-sm": {
+      "$type": "dimension",
+      "$value": "10px",
+      "$description": "Badges, small tags."
+    },
+    "radius-md": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$description": "Cards, contact rows, inputs."
+    },
+    "radius-lg": {
+      "$type": "dimension",
+      "$value": "24px",
+      "$description": "Bottom sheets, large panels, the app icon at 1x scale."
+    },
+    "radius-pill": {
+      "$type": "dimension",
+      "$value": "999px",
+      "$description": "Buttons and filter chips. Pills echo the ground bar in the mark."
+    }
+  },
+  "size": {
+    "touch-min": {
+      "$type": "dimension",
+      "$value": "44px",
+      "$description": "Minimum touch target, chips included."
+    },
+    "button-height": {
+      "$type": "dimension",
+      "$value": "54px",
+      "$description": "Primary actions in the bottom sheet: big enough for one thumb, mid-walk."
+    }
+  }
+}

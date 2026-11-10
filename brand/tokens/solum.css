@@ -1,0 +1,65 @@
+/* Solum design tokens. Generated from tokens.json */
+:root {
+  --surface: #FAF8F3;
+  --surface-raised: #FFFFFF;
+  --sandstone: #E7DFD0;
+  --ink: #1F2421;
+  --ink-muted: #50564F;
+  --olive: #4D5B2E;
+  --on-olive: #FFFFFF;
+  --sol: #E9B949;
+  --on-sol: #1F2421;
+  --sol-tint: #FBF0D3;
+  --basalt: #1F2421;
+  --on-basalt: #FFFFFF;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-8: 32px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --touch-min: 44px;
+  --button-height: 54px;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface: #171A18;
+    --surface-raised: #222623;
+    --sandstone: #3A3E38;
+    --ink: #F3F0E8;
+    --ink-muted: #B9BDB6;
+    --olive: #A3B57A;
+    --on-olive: #171A18;
+    --sol: #E9B949;
+    --on-sol: #1F2421;
+    --sol-tint: #3D3420;
+    --basalt: #1F2421;
+    --on-basalt: #FFFFFF;
+  }
+}
+:root[data-theme="dark"] {
+  --surface: #171A18;
+  --surface-raised: #222623;
+  --sandstone: #3A3E38;
+  --ink: #F3F0E8;
+  --ink-muted: #B9BDB6;
+  --olive: #A3B57A;
+  --on-olive: #171A18;
+  --sol: #E9B949;
+  --on-sol: #1F2421;
+  --sol-tint: #3D3420;
+  --basalt: #1F2421;
+  --on-basalt: #FFFFFF;
+}
+
+.text-display { font-family: var(--font-sans); font-size: 56px; line-height: 56px; font-weight: 800; }
+.text-title { font-family: var(--font-sans); font-size: 26px; line-height: 32px; font-weight: 800; }
+.text-heading { font-family: var(--font-sans); font-size: 20px; line-height: 26px; font-weight: 700; }
+.text-body-strong { font-family: var(--font-sans); font-size: 16px; line-height: 22px; font-weight: 700; }
+.text-body { font-family: var(--font-sans); font-size: 16px; line-height: 24px; font-weight: 400; }
+.text-small { font-family: var(--font-sans); font-size: 14px; line-height: 20px; font-weight: 500; }
+.text-label { font-family: var(--font-sans); font-size: 13px; line-height: 16px; font-weight: 700; }
