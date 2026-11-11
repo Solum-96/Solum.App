@@ -35,14 +35,93 @@ abstract final class SolumPalette {
   // Outlined-area fill: olive at 12%.
   static const areaFill = Color(0x1F4D5B2E);
   static const areaFillDark = Color(0x1FA3B57A);
+  static const scrim = Color(0x661F2421); // basalt at 40%
+  /// Olive-light used on basalt (free-plan usage bar, coach "Skip").
+  static const oliveOnBasalt = Color(0xFFA3B57A);
+}
+
+/// Map palette (docs/design/SPEC.md, "Map palette"). Read with
+/// `SolumMapColors.of(context)`.
+@immutable
+class SolumMapColors extends ThemeExtension<SolumMapColors> {
+  const SolumMapColors({
+    required this.ground,
+    required this.road,
+    required this.majorRoad,
+    required this.building,
+    required this.green,
+    required this.label,
+    required this.halo,
+    required this.attributionBg,
+    required this.meHalo,
+    required this.areaFill,
+  });
+
+  final Color ground, road, majorRoad, building, green, label, halo, attributionBg, meHalo;
+
+  /// Outlined-area fill on the map (olive 12% light, olive-dark 14% dark).
+  final Color areaFill;
+
+  static const light = SolumMapColors(
+    ground: Color(0xFFE7DFD0),
+    road: Color(0xFFFAF8F3),
+    majorRoad: Color(0xFFFAF8F3),
+    building: Color(0xFFD6CFC1),
+    green: Color(0xFFD3D0B7),
+    label: Color(0xFF50564F),
+    halo: Color(0xFFFAF8F3),
+    attributionBg: Color(0xD9E7DFD0),
+    meHalo: Color(0x384D5B2E),
+    areaFill: Color(0x1F4D5B2E),
+  );
+
+  static const dark = SolumMapColors(
+    ground: Color(0xFF1B1F1C),
+    road: Color(0xFF2F342F),
+    majorRoad: Color(0xFF3E443D),
+    building: Color(0xFF252A26),
+    green: Color(0xFF252C21),
+    label: Color(0xFFB9BDB6),
+    halo: Color(0xFF1B1F1C),
+    attributionBg: Color(0xD91B1F1C),
+    meHalo: Color(0x47A3B57A),
+    areaFill: Color(0x24A3B57A),
+  );
+
+  static SolumMapColors of(BuildContext context) => Theme.of(context).extension<SolumMapColors>() ?? light;
+
+  @override
+  SolumMapColors copyWith() => this;
+
+  @override
+  SolumMapColors lerp(ThemeExtension<SolumMapColors>? other, double t) {
+    if (other is! SolumMapColors) return this;
+    Color l(Color a, Color b) => Color.lerp(a, b, t)!;
+    return SolumMapColors(
+      ground: l(ground, other.ground),
+      road: l(road, other.road),
+      majorRoad: l(majorRoad, other.majorRoad),
+      building: l(building, other.building),
+      green: l(green, other.green),
+      label: l(label, other.label),
+      halo: l(halo, other.halo),
+      attributionBg: l(attributionBg, other.attributionBg),
+      meHalo: l(meHalo, other.meHalo),
+      areaFill: l(areaFill, other.areaFill),
+    );
+  }
 }
 
 abstract final class SolumSpace {
   static const s1 = 4.0;
   static const s2 = 8.0;
+  static const s3 = 12.0;
   static const s4 = 16.0; // screen margin
   static const s5 = 20.0; // sheet and card padding
+  static const s6 = 24.0;
   static const s8 = 32.0;
+  static const s10 = 40.0;
+  static const s12 = 48.0;
 }
 
 abstract final class SolumRadius {
@@ -54,21 +133,67 @@ abstract final class SolumRadius {
 
 abstract final class SolumSize {
   static const touchMin = 44.0;
-  static const buttonHeight = 54.0;
+  static const buttonHeight = 54.0; // primary pills
+  static const buttonMd = 44.0;
+  static const chip = 44.0;
+  static const icon = 24.0;
+  static const tabBar = 84.0; // includes the home indicator
+  static const pin = 16.0;
+  static const pinFollowUp = 18.0;
+}
+
+/// Elevation. Flat by default; shadows only for UI floating over the map
+/// ([float]) and bottom sheets ([sheet]).
+abstract final class SolumShadows {
+  static const float = [
+    BoxShadow(color: Color(0x1A1F2421), blurRadius: 8, offset: Offset(0, 2)),
+    BoxShadow(color: Color(0x141F2421), blurRadius: 2, offset: Offset(0, 1)),
+  ];
+  static const sheet = [BoxShadow(color: Color(0x1A1F2421), blurRadius: 24, offset: Offset(0, -4))];
+  static const pinSelected = [BoxShadow(color: Color(0x591F2421), blurRadius: 4, offset: Offset(0, 2))];
+}
+
+/// Motion. Ease-out, no bounce.
+abstract final class SolumMotion {
+  static const ease = Cubic(0.2, 0.8, 0.2, 1);
+  static const press = Duration(milliseconds: 120);
+  static const toggle = Duration(milliseconds: 200);
+  static const sheet = Duration(milliseconds: 280);
+  static const pan = Duration(milliseconds: 320);
+  static const toast = Duration(milliseconds: 3500);
 }
 
 /// The Solum type scale. Plus Jakarta Sans only.
 abstract final class SolumText {
   static const family = 'PlusJakartaSans';
 
-  static const display = TextStyle(fontFamily: family, fontSize: 56, height: 1.0, fontWeight: FontWeight.w800, letterSpacing: -2.0);
-  static const title = TextStyle(fontFamily: family, fontSize: 26, height: 32 / 26, fontWeight: FontWeight.w800, letterSpacing: -0.5);
+  static const display =
+      TextStyle(fontFamily: family, fontSize: 56, height: 1.0, fontWeight: FontWeight.w800, letterSpacing: -2.0);
+  static const title =
+      TextStyle(fontFamily: family, fontSize: 26, height: 32 / 26, fontWeight: FontWeight.w800, letterSpacing: -0.5);
   static const heading = TextStyle(fontFamily: family, fontSize: 20, height: 26 / 20, fontWeight: FontWeight.w700);
   static const bodyStrong = TextStyle(fontFamily: family, fontSize: 16, height: 22 / 16, fontWeight: FontWeight.w700);
   static const body = TextStyle(fontFamily: family, fontSize: 16, height: 24 / 16, fontWeight: FontWeight.w400);
   static const small = TextStyle(fontFamily: family, fontSize: 14, height: 20 / 14, fontWeight: FontWeight.w500);
-  static const label = TextStyle(fontFamily: family, fontSize: 13, height: 16 / 13, fontWeight: FontWeight.w700, letterSpacing: 0.8);
+  static const label =
+      TextStyle(fontFamily: family, fontSize: 13, height: 16 / 13, fontWeight: FontWeight.w700, letterSpacing: 0.8);
   static const button = TextStyle(fontFamily: family, fontSize: 17, height: 1.2, fontWeight: FontWeight.w700);
+
+  // Screen-level styles used by the v2 app (docs/design/SPEC.md).
+  /// Tab and paywall headlines: 30/34 800 −0.03em.
+  static const headline =
+      TextStyle(fontFamily: family, fontSize: 30, height: 34 / 30, fontWeight: FontWeight.w800, letterSpacing: -0.9);
+
+  /// Welcome headline: 34/38 800 −0.03em.
+  static const welcome =
+      TextStyle(fontFamily: family, fontSize: 34, height: 38 / 34, fontWeight: FontWeight.w800, letterSpacing: -1.02);
+
+  /// Big counts ("37 of 43 visited"): 20/24 800 −0.02em.
+  static const count =
+      TextStyle(fontFamily: family, fontSize: 20, height: 24 / 20, fontWeight: FontWeight.w800, letterSpacing: -0.4);
+
+  /// Toasts: 500 15/20.
+  static const toast = TextStyle(fontFamily: family, fontSize: 15, height: 20 / 15, fontWeight: FontWeight.w500);
 }
 
 /// Brand colors that Material's ColorScheme has no slot for.
@@ -88,6 +213,9 @@ class SolumColors extends ThemeExtension<SolumColors> {
     required this.pinRing,
     required this.areaFill,
     required this.areaStroke,
+    required this.pinFollowUpRing,
+    required this.visitedTint,
+    required this.scrim,
   });
 
   /// Follow-ups only: the logo dot, follow-up pins, the Follow up button.
@@ -107,6 +235,13 @@ class SolumColors extends ThemeExtension<SolumColors> {
   final Color pinRing;
   final Color areaFill;
   final Color areaStroke;
+  final Color pinFollowUpRing;
+
+  /// Visited badge background: olive at 12%.
+  final Color visitedTint;
+
+  /// Behind modal sheets.
+  final Color scrim;
 
   static const light = SolumColors(
     sol: SolumPalette.sol,
@@ -121,6 +256,9 @@ class SolumColors extends ThemeExtension<SolumColors> {
     pinRing: SolumPalette.ink,
     areaFill: SolumPalette.areaFill,
     areaStroke: SolumPalette.olive,
+    pinFollowUpRing: SolumPalette.basalt,
+    visitedTint: SolumPalette.areaFill,
+    scrim: SolumPalette.scrim,
   );
 
   static const dark = SolumColors(
@@ -136,10 +274,12 @@ class SolumColors extends ThemeExtension<SolumColors> {
     pinRing: SolumPalette.inkDark,
     areaFill: SolumPalette.areaFillDark,
     areaStroke: SolumPalette.oliveDark,
+    pinFollowUpRing: SolumPalette.basalt,
+    visitedTint: SolumPalette.areaFillDark,
+    scrim: SolumPalette.scrim,
   );
 
-  static SolumColors of(BuildContext context) =>
-      Theme.of(context).extension<SolumColors>() ?? light;
+  static SolumColors of(BuildContext context) => Theme.of(context).extension<SolumColors>() ?? light;
 
   @override
   SolumColors copyWith({
@@ -155,6 +295,9 @@ class SolumColors extends ThemeExtension<SolumColors> {
     Color? pinRing,
     Color? areaFill,
     Color? areaStroke,
+    Color? pinFollowUpRing,
+    Color? visitedTint,
+    Color? scrim,
   }) {
     return SolumColors(
       sol: sol ?? this.sol,
@@ -169,6 +312,9 @@ class SolumColors extends ThemeExtension<SolumColors> {
       pinRing: pinRing ?? this.pinRing,
       areaFill: areaFill ?? this.areaFill,
       areaStroke: areaStroke ?? this.areaStroke,
+      pinFollowUpRing: pinFollowUpRing ?? this.pinFollowUpRing,
+      visitedTint: visitedTint ?? this.visitedTint,
+      scrim: scrim ?? this.scrim,
     );
   }
 
@@ -188,6 +334,9 @@ class SolumColors extends ThemeExtension<SolumColors> {
       pinRing: Color.lerp(pinRing, other.pinRing, t)!,
       areaFill: Color.lerp(areaFill, other.areaFill, t)!,
       areaStroke: Color.lerp(areaStroke, other.areaStroke, t)!,
+      pinFollowUpRing: Color.lerp(pinFollowUpRing, other.pinFollowUpRing, t)!,
+      visitedTint: Color.lerp(visitedTint, other.visitedTint, t)!,
+      scrim: Color.lerp(scrim, other.scrim, t)!,
     );
   }
 }
@@ -216,6 +365,7 @@ ThemeData _build({
   required Color primary,
   required Color onPrimary,
   required SolumColors extra,
+  required SolumMapColors map,
 }) {
   final scheme = ColorScheme(
     brightness: brightness,
@@ -248,7 +398,7 @@ ThemeData _build({
     fontFamily: SolumText.family,
     scaffoldBackgroundColor: surface,
     textTheme: _textTheme(ink, inkMuted),
-    extensions: <ThemeExtension<dynamic>>[extra],
+    extensions: <ThemeExtension<dynamic>>[extra, map],
     dividerColor: sandstone,
     materialTapTargetSize: MaterialTapTargetSize.padded,
 
@@ -358,6 +508,7 @@ ThemeData solumLightTheme() => _build(
       primary: SolumPalette.olive,
       onPrimary: SolumPalette.onOlive,
       extra: SolumColors.light,
+      map: SolumMapColors.light,
     );
 
 /// Dark theme. Basalt and sol keep their values.
@@ -371,4 +522,5 @@ ThemeData solumDarkTheme() => _build(
       primary: SolumPalette.oliveDark,
       onPrimary: SolumPalette.onOliveDark,
       extra: SolumColors.dark,
+      map: SolumMapColors.dark,
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../theme/solum_theme.dart';
 
@@ -79,6 +80,45 @@ class SolumLogo extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+/// The official lockup SVG (brand/logos). Full color on light grounds,
+/// reverse (white bar and wordmark) in dark mode or on basalt.
+class SolumLockup extends StatelessWidget {
+  const SolumLockup({super.key, this.height = 28, this.reverse});
+
+  final double height;
+
+  /// Defaults to reverse in dark mode.
+  final bool? reverse;
+
+  @override
+  Widget build(BuildContext context) {
+    final rev = reverse ?? Theme.of(context).brightness == Brightness.dark;
+    return SvgPicture.asset(
+      rev ? 'brand/logos/solum-horizontal-reverse.svg' : 'brand/logos/solum-horizontal-full-color.svg',
+      height: height,
+      semanticsLabel: 'Solum',
+    );
+  }
+}
+
+/// The official mark SVG (sol dot on the ground bar).
+class SolumMarkLogo extends StatelessWidget {
+  const SolumMarkLogo({super.key, this.height = 32, this.reverse});
+
+  final double height;
+  final bool? reverse;
+
+  @override
+  Widget build(BuildContext context) {
+    final rev = reverse ?? Theme.of(context).brightness == Brightness.dark;
+    return SvgPicture.asset(
+      rev ? 'brand/logos/solum-mark-reverse.svg' : 'brand/logos/solum-mark-full-color.svg',
+      height: height,
+      semanticsLabel: 'Solum',
     );
   }
 }

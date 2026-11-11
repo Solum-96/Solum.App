@@ -7,8 +7,15 @@ environment:
   sdk: ">=3.4.0 <4.0.0"
 
 dependencies:
+  cupertino_icons: ^2.0.0
   flutter:
     sdk: flutter
+  flutter_map: ^8.3.2
+  flutter_svg: ^2.3.2
+  latlong2: ^0.10.1
+  lucide_icons_flutter: ^4.0.3
+  provider: ^6.1.5+1
+  url_launcher: ^6.3.3
 
 dev_dependencies:
   flutter_test:
@@ -17,6 +24,13 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  # Official logo files (never retype the wordmark).
+  assets:
+    - brand/logos/solum-horizontal-full-color.svg
+    - brand/logos/solum-horizontal-reverse.svg
+    - brand/logos/solum-mark-full-color.svg
+    - brand/logos/solum-mark-reverse.svg
 
   # Brand typeface (Open Font License). Files live in brand/fonts/.
   fonts:

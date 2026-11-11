@@ -10,10 +10,15 @@ Priced like a personal productivity app ($9–14/month). No team hierarchies, re
 
 ## Project layout
 
-- `lib/main.dart` — app entry; applies `solumLightTheme()` / `solumDarkTheme()` with `ThemeMode.system`.
-- `lib/theme/solum_theme.dart` — the Flutter theme: `SolumPalette`, `SolumColors` (ThemeExtension for sol, basalt, map pins), `SolumText`, `SolumSpace`, `SolumRadius`, `SolumSize`.
-- `lib/widgets/solum_logo.dart` — `SolumMark` and `SolumLogo`.
-- `lib/screens/map_home_screen.dart` — branded map screen; the map itself is a placeholder painter to replace with a real map widget.
+The v2 app (design handoff in `docs/design/`) is implemented in `lib/`. Read `AGENTS.md` for the full code map, conventions and commands.
+
+- `lib/main.dart` — app entry; `SolumStore` via provider; `SOLUM_START` / web `?start=` jumps to a screen state.
+- `lib/state/solum_store.dart` — all app state and flows (port of the prototype's logic class).
+- `lib/theme/solum_theme.dart` — `SolumPalette`, `SolumColors` and `SolumMapColors` (ThemeExtensions), `SolumText`, `SolumSpace`, `SolumRadius`, `SolumSize`, `SolumShadows`, `SolumMotion`.
+- `lib/widgets/` — design-system components (`solum_components.dart`), logos (`solum_logo.dart`).
+- `lib/screens/` — onboarding, map tab, tabs, contact detail, sheets, app shell.
+- `docs/design/` — design spec (`SPEC.md`), screen captures, clickable prototype, design chats.
+- `flutterflow/` — FlutterFlow kit: theme values, data schema, custom code, page guide.
 - `brand/` — brand source files: `tokens/tokens.json` (canonical values), web/TS token exports, `logos/` (SVG), `fonts/` (Plus Jakarta Sans, OFL), `brand-book.md`.
 
 Commands: `flutter pub get`, `flutter analyze`, `flutter test`, `flutter run`.

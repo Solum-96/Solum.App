@@ -19,3 +19,12 @@ coverage/
 **/ios/Flutter/.last_build_id
 **/ios/Pods/
 **/ios/.symlinks/
+
+# Generated platform folders and metadata (see README: run `flutter create .`)
+/web/
+/ios/
+/android/
+/macos/
+/linux/
+/windows/
+.metadata

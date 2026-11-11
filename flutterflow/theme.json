@@ -1,0 +1,40 @@
+{
+  "$comment": "Solum theme values for FlutterFlow Theme settings. Source of truth: brand/tokens/tokens.json and lib/theme/solum_theme.dart.",
+  "fontFamily": "Plus Jakarta Sans",
+  "colors": {
+    "light": {
+      "primary": "#4D5B2E", "secondary": "#E9B949", "tertiary": "#1F2421", "alternate": "#E7DFD0",
+      "primaryText": "#1F2421", "secondaryText": "#50564F",
+      "primaryBackground": "#FAF8F3", "secondaryBackground": "#FFFFFF",
+      "info": "#FFFFFF", "error": "#9A3412",
+      "custom": { "solTint": "#FBF0D3", "onSol": "#1F2421", "scrim": "#661F2421", "areaFill": "#1F4D5B2E" }
+    },
+    "dark": {
+      "primary": "#A3B57A", "secondary": "#E9B949", "tertiary": "#1F2421", "alternate": "#3A3E38",
+      "primaryText": "#F3F0E8", "secondaryText": "#B9BDB6",
+      "primaryBackground": "#171A18", "secondaryBackground": "#222623",
+      "info": "#171A18", "error": "#9A3412",
+      "custom": { "solTint": "#3D3420", "onSol": "#1F2421", "scrim": "#661F2421", "areaFill": "#24A3B57A" }
+    }
+  },
+  "typography": {
+    "displayLarge":   { "size": 56, "lineHeight": 56, "weight": 800, "letterSpacing": -2.5 },
+    "headlineLarge":  { "size": 34, "lineHeight": 38, "weight": 800, "letterSpacing": -1.0 },
+    "headlineMedium": { "size": 30, "lineHeight": 34, "weight": 800, "letterSpacing": -0.9 },
+    "headlineSmall":  { "size": 26, "lineHeight": 32, "weight": 800, "letterSpacing": -0.5 },
+    "titleLarge":     { "size": 20, "lineHeight": 26, "weight": 700, "letterSpacing": -0.2 },
+    "titleMedium":    { "size": 20, "lineHeight": 24, "weight": 800, "letterSpacing": -0.4 },
+    "titleSmall":     { "size": 16, "lineHeight": 22, "weight": 700, "letterSpacing": 0 },
+    "bodyLarge":      { "size": 16, "lineHeight": 24, "weight": 400, "letterSpacing": 0 },
+    "bodyMedium":     { "size": 14, "lineHeight": 20, "weight": 500, "letterSpacing": 0 },
+    "labelMedium":    { "size": 13, "lineHeight": 16, "weight": 700, "letterSpacing": 0.8, "uppercase": true }
+  },
+  "radius": { "badge": 10, "card": 16, "sheet": 24, "pill": 999 },
+  "spacing": [4, 8, 12, 16, 20, 24, 32, 40, 48],
+  "sizes": { "touchMin": 44, "buttonLarge": 54, "buttonMedium": 44, "chip": 44, "icon": 24, "tabBar": 84 },
+  "shadows": {
+    "float": ["0 2 8 rgba(31,36,33,.10)", "0 1 2 rgba(31,36,33,.08)"],
+    "sheet": ["0 -4 24 rgba(31,36,33,.10)"]
+  },
+  "motion": { "easing": "cubic-bezier(.2,.8,.2,1)", "pressMs": 120, "toggleMs": 200, "sheetMs": 280, "panMs": 320 }
+}

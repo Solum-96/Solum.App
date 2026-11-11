@@ -1,1 +1,9 @@
 include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - build/**
+    # FlutterFlow custom code compiles inside a FlutterFlow project only.
+    - flutterflow/**
+    - docs/**
+    - web/**

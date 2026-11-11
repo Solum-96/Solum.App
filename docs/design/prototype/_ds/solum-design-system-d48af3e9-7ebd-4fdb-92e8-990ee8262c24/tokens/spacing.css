@@ -1,0 +1,27 @@
+/* Spacing, radii, sizing, elevation, motion. tokens.json defines space-1/2/4/5/8, radii, touch-min, button-height; the rest are additions on the same 4px step. */
+:root{
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-8:32px;--space-10:40px;--space-12:48px;
+
+--screen-margin:var(--space-4);
+--sheet-padding:var(--space-5);
+
+--radius-sm:10px;--radius-md:16px;--radius-lg:24px;--radius-pill:999px;
+
+--touch-min:44px;
+--button-height:54px;
+--chip-height:44px;
+--icon-size:24px;--icon-stroke:2px;
+
+--pin-size:16px;--pin-ring:3px;--pin-followup-size:18px;
+
+/* Elevation: flat by default; only floating map UI lifts. */
+--shadow-none:none;
+--shadow-float:0 2px 8px rgba(31,36,33,.10),0 1px 2px rgba(31,36,33,.08);
+--shadow-sheet:0 -4px 24px rgba(31,36,33,.10);
+--scrim:rgba(31,36,33,.40);
+
+--ease-out:cubic-bezier(.2,.8,.2,1); /* @kind other */
+--duration-fast:120ms; /* @kind other */
+--duration-base:200ms; /* @kind other */
+--duration-sheet:280ms; /* @kind other */
+}

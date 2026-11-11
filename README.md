@@ -15,7 +15,16 @@ flutter test
 flutter run
 ```
 
-`flutter create .` only adds missing files and keeps the existing `lib/`, `test/` and `pubspec.yaml`. It also adds a sample `test/widget_test.dart` that refers to a `MyApp` class this app doesn't have: delete that file (the real tests are in `test/theme_test.dart`).
+`flutter create .` only adds missing files and keeps the existing `lib/`, `test/` and `pubspec.yaml`.
+
+## What's here
+
+- **`lib/`** — the full Solum v2 app in Flutter: onboarding, Apple/Google sign-up, plans, sample-area walkthrough, the map (progress card, filter chips, swipeable stop cards), log visit, follow-ups, add contact (drop a pin or type an address), outline a new area, search, directions, contacts, contact detail and edit, settings, plan limits, dark mode. Runs on local demo data (Sellwood, Portland).
+- **`flutterflow/`** — kit for building the same app in FlutterFlow (theme, data schema, custom widgets/actions/functions, page guide and agent prompts).
+- **`docs/design/`** — the design handoff: spec, 30 screen captures, the clickable HTML prototype and the design conversations.
+- **`AGENTS.md`** — code map and rules for coding agents.
+
+Open any state directly: `flutter run --dart-define=SOLUM_START=map-log` (list in `AGENTS.md`).
 
 ## Brand
 

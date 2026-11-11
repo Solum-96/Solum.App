@@ -1,0 +1,17 @@
+/* Solum type — one family, Plus Jakarta Sans. Scale from Brand Book §5. */
+:root{
+--font-sans:'Plus Jakarta Sans',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+--font-display:var(--font-sans);
+--weight-regular:400;--weight-medium:500;--weight-bold:700;--weight-extrabold:800;
+
+--text-display-size:56px;--text-display-line:56px;--text-display-weight:800;--text-display-tracking:-0.045em;
+--text-title-size:26px;--text-title-line:32px;--text-title-weight:800;--text-title-tracking:-0.02em;
+--text-heading-size:20px;--text-heading-line:26px;--text-heading-weight:700;--text-heading-tracking:-0.01em;
+--text-body-strong-size:16px;--text-body-strong-line:22px;--text-body-strong-weight:700;
+--text-body-size:16px;--text-body-line:24px;--text-body-weight:400;
+--text-small-size:14px;--text-small-line:20px;--text-small-weight:500;
+--text-label-size:13px;--text-label-line:16px;--text-label-weight:700;--text-label-tracking:0.06em;
+
+--wordmark-weight:800;--wordmark-tracking:-0.045em;
+--text-min:13px;
+}
