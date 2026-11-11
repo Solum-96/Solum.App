@@ -20,10 +20,8 @@ coverage/
 **/ios/Pods/
 **/ios/.symlinks/
 
-# Generated platform folders and metadata (see README: run `flutter create .`)
+# Generated platform folders not used by Solum (ios/ and android/ are committed)
 /web/
-/ios/
-/android/
 /macos/
 /linux/
 /windows/

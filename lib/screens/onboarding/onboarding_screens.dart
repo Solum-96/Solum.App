@@ -211,20 +211,22 @@ class AuthScreen extends StatelessWidget {
         ),
         Column(
           children: [
-            SolumButton(
-              label: 'Continue with Apple',
-              variant: SolumButtonVariant.dark,
-              leading: const AppleMark(size: 20),
-              fullWidth: true,
-              onPressed: () => store.signInWith(AuthProvider.apple),
-            ),
-            const SizedBox(height: 10),
+            if (store.auth.supports(AuthProvider.apple)) ...[
+              SolumButton(
+                label: 'Continue with Apple',
+                variant: SolumButtonVariant.dark,
+                leading: const AppleMark(size: 20),
+                fullWidth: true,
+                onPressed: store.signingIn ? null : () => store.signInWith(AuthProvider.apple),
+              ),
+              const SizedBox(height: 10),
+            ],
             SolumButton(
               label: 'Continue with Google',
               variant: SolumButtonVariant.secondary,
               leading: const GoogleMark(size: 19),
               fullWidth: true,
-              onPressed: () => store.signInWith(AuthProvider.google),
+              onPressed: store.signingIn ? null : () => store.signInWith(AuthProvider.google),
             ),
           ],
         ),

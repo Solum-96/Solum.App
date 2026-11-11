@@ -7,14 +7,18 @@ environment:
   sdk: ">=3.4.0 <4.0.0"
 
 dependencies:
+  crypto: ^3.0.8
   cupertino_icons: ^2.0.0
   flutter:
     sdk: flutter
   flutter_map: ^8.3.2
   flutter_svg: ^2.3.2
+  google_sign_in: ^7.2.0
   latlong2: ^0.10.1
   lucide_icons_flutter: ^4.0.3
   provider: ^6.1.5+1
+  sign_in_with_apple: ^8.2.0
+  supabase_flutter: ^2.18.3
   url_launcher: ^6.3.3
 
 dev_dependencies:

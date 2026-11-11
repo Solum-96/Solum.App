@@ -7,3 +7,5 @@ analyzer:
     - flutterflow/**
     - docs/**
     - web/**
+    - android/**
+    - ios/**

@@ -6,16 +6,15 @@ Solum is the territory and follow-up app for a team of one: outline an area, see
 
 ## Getting started
 
-This repository holds the Flutter app code and brand. Platform folders (`android/`, `ios/`) are not committed yet; generate them once:
+This repository holds the Flutter app, the iOS and Android projects (bundle ID `app.solum`) and the brand.
 
 ```bash
-flutter create . --org app.solum --project-name solum --platforms ios,android
 flutter pub get
 flutter test
 flutter run
 ```
 
-`flutter create .` only adds missing files and keeps the existing `lib/`, `test/` and `pubspec.yaml`.
+Sign-in uses Supabase with Apple and Google; complete the console steps in `docs/auth-setup.md` and pass the Google client IDs as dart-defines. Without them, run with `--dart-define=SOLUM_DEMO_AUTH=true`.
 
 ## What's here
 

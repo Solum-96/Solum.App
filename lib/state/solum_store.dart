@@ -462,8 +462,28 @@ class SolumStore extends ChangeNotifier {
     startSignUp();
   }
 
+  /// True while the Apple/Google sheet or the token exchange is in flight.
+  bool signingIn = false;
+
   Future<void> signInWith(AuthProvider p) async {
-    user = await auth.signIn(p);
+    if (signingIn) return;
+    _set(() => signingIn = true);
+    try {
+      user = await auth.signIn(p);
+    } on AuthCancelled {
+      return;
+    } on AuthFailure catch (e) {
+      debugPrint('Sign-in failed: ${e.detail}');
+      showToast('Sign-in did not finish. Check your connection and try again.');
+      return;
+    } catch (e) {
+      debugPrint('Sign-in failed: $e');
+      showToast('Sign-in did not finish. Check your connection and try again.');
+      return;
+    } finally {
+      signingIn = false;
+      notifyListeners();
+    }
     if (authMode == AuthMode.signIn) {
       _set(() => step = OnboardingStep.done);
       showToast('Welcome back, ${user.firstName}');
@@ -474,6 +494,16 @@ class SolumStore extends ChangeNotifier {
         paywallContext = PaywallContext.standard;
       });
     }
+  }
+
+  /// On launch: a saved session skips onboarding and opens the map.
+  Future<void> restoreSession() async {
+    final u = await auth.restoreSession();
+    if (u == null) return;
+    _set(() {
+      user = u;
+      step = OnboardingStep.done;
+    });
   }
 
   Future<void> signOut() async {
