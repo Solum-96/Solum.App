@@ -1,0 +1,11 @@
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font-sans);font-size:var(--text-body-size);line-height:var(--text-body-line);color:var(--text-body);background:var(--surface);-webkit-font-smoothing:antialiased}
+a{color:var(--olive);text-decoration:underline;text-underline-offset:2px}
+a:hover{color:var(--basalt)}
+.solum-display{font:800 var(--text-display-size)/var(--text-display-line) var(--font-sans);letter-spacing:var(--text-display-tracking)}
+.solum-title{font:800 var(--text-title-size)/var(--text-title-line) var(--font-sans);letter-spacing:var(--text-title-tracking)}
+.solum-heading{font:700 var(--text-heading-size)/var(--text-heading-line) var(--font-sans);letter-spacing:var(--text-heading-tracking)}
+.solum-body-strong{font:700 var(--text-body-strong-size)/var(--text-body-strong-line) var(--font-sans)}
+.solum-body{font:400 var(--text-body-size)/var(--text-body-line) var(--font-sans)}
+.solum-small{font:500 var(--text-small-size)/var(--text-small-line) var(--font-sans)}
+.solum-label{font:700 var(--text-label-size)/var(--text-label-line) var(--font-sans);letter-spacing:var(--text-label-tracking);text-transform:uppercase}

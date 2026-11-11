@@ -1,0 +1,4 @@
+// Google Sign-In for iOS.
+// Replace with the REVERSED iOS OAuth client ID from Google Cloud, e.g.
+// com.googleusercontent.apps.1234567890-abcdefg (see docs/auth-setup.md).
+GOOGLE_REVERSED_CLIENT_ID = com.googleusercontent.apps.REPLACE_ME

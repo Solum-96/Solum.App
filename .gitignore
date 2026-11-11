@@ -19,3 +19,10 @@ coverage/
 **/ios/Flutter/.last_build_id
 **/ios/Pods/
 **/ios/.symlinks/
+
+# Generated platform folders not used by Solum (ios/ and android/ are committed)
+/web/
+/macos/
+/linux/
+/windows/
+.metadata

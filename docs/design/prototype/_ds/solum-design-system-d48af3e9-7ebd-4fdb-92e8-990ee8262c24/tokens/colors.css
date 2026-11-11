@@ -1,0 +1,63 @@
+/* Solum color tokens — canonical source: tokens/tokens.json (Solum v1). Light on :root, dark on [data-theme="dark"]. */
+:root{
+/* Fixed brand colors (same in both themes) */
+--basalt:#1F2421;
+--sol:#E9B949;
+--on-sol:#1F2421;
+--on-basalt:#FFFFFF;
+--white:#FFFFFF;
+--chalk:#FAF8F3;
+--rust:#9A3412;
+
+/* Themed (tokens.json names) */
+--surface:#FAF8F3;
+--surface-raised:#FFFFFF;
+--sandstone:#E7DFD0;
+--ink:#1F2421;
+--ink-muted:#50564F;
+--olive:#4D5B2E;
+--on-olive:#FFFFFF;
+--sol-tint:#FBF0D3;
+
+/* Supporting (not in tokens.json; seen in brand book) */
+--ink-faint:#B9BDB6;
+
+/* Semantic aliases */
+--surface-sunken:var(--sandstone);
+--surface-inverse:var(--basalt);
+--brand:var(--olive);
+--signal:var(--sol);
+--text-body:var(--ink);
+--text-muted:var(--ink-muted);
+--text-disabled:var(--ink-faint);
+--text-inverse:var(--on-basalt);
+--on-sol-tint:var(--ink);
+--border:var(--sandstone);
+--divider:var(--sandstone);
+--progress-track:var(--sandstone);
+--progress-fill:var(--olive);
+--danger:var(--rust);
+--focus-ring:var(--olive);
+
+/* Map language */
+--map-ground:var(--sandstone);
+--map-road:var(--surface);
+--pin-unvisited-fill:var(--surface-raised);
+--pin-unvisited-ring:var(--ink);
+--pin-visited:var(--olive);
+--pin-followup-fill:var(--sol);
+--pin-followup-ring:var(--basalt);
+--area-fill:color-mix(in srgb,var(--olive) 12%,transparent);
+--area-stroke:var(--olive);
+}
+[data-theme="dark"]{
+--surface:#171A18;
+--surface-raised:#222623;
+--sandstone:#3A3E38;
+--ink:#F3F0E8;
+--ink-muted:#B9BDB6;
+--olive:#A3B57A;
+--on-olive:#171A18;
+--sol-tint:#3D3420;
+--ink-faint:#50564F;
+}
